@@ -1,51 +1,101 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
+import Alert from './components/Alert';
+import React, { useState } from 'react'
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
+
+import About from './About';
 let name = "Vedant";
+function App(browser, node) {
+  const [alert, setAlert] = useState(null)
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type,
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 3000)
+  }
+  let toggleMode = () => {
+    if (mode === "light") {
+      setMode('dark');
+      document.body.style.backgroundColor = "#042743";
+      document.title = "TextUtils - Dark Mode ";
+      setInterval(() => {
+        document.title = 'TextUtils is amazing.';
+      }, 2000)
+      setInterval(() => {
+        document.title = 'Install TextUtils Now .';
+      }, 1500)
 
-function App() {
+    }
+    else {
+      setMode('light');
+      document.body.style.backgroundColor = "white";
+      document.title = "TextUtils - Light Mode ";
+
+
+    }
+
+  }
+  let GreenMode = () => {
+    if (mode === "light") {
+      setMode('Green');
+      document.body.style.backgroundColor = "#06f72f";
+      document.title = "TextUtils - Green Mode ";
+    }
+    else {
+      setMode('light');
+      document.body.style.backgroundColor = "white";
+      document.title = "TextUtils - Light Mode ";
+
+
+    }
+
+  }
+  let RedMode = () => {
+    if (mode === "light") {
+      setMode('Red');
+      document.body.style.backgroundColor = "red";
+      document.title = "TextUtils - Red Mode ";
+
+
+    }
+    else {
+      setMode('light');
+      document.body.style.backgroundColor = "white";
+      document.title = "TextUtils - Light Mode ";
+
+
+    }
+
+  }
+  let [mode, setMode] = useState('light') // whether dark mode is enabled or not .
   return (
-
-
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="/">TextUtils</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">About</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">Link</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="/">Action</a></li>
-                  <li><a className="dropdown-item" href="/">Another action</a></li>
-                  <li><a className="dropdown-item" href="/">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form className="d-flex">d
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </>
+      <Navbar title="TextUtils" mode={mode} GreenMode={GreenMode} RedMode={RedMode} toggleMode={toggleMode} aboutText="About " />
+      {/* <Router>
+        {/* <Navbar title="textutils1" aboutText="About Textutils " /> */}
+      <Alert alert={alert} />
+      <div className="container my-3">
+        <TextForm mode={mode} GreenMode={GreenMode} RedMopde={RedMode} showAlert={showAlert} heading="Enter test to analyze " />
+        {/* <Switch>
+            <Route exact path="/about">
+              <About />
+            </Route> */}
 
+        {/* <Route exact path="/TextForm" >
+
+            </Route>
+          </Switch> */}
+      </div>
+      {/* // </Router> */}
+    </>
   );
-}
+
+};
 
 export default App;

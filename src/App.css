@@ -39,3 +39,84 @@
 .blank{
   color :blue;
 }
+/* .btn{
+
+} */
+.ButtonUI {
+  border-radius: 4px;
+  border: none;
+  padding: 10px 24px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.G-green {
+  color: white;
+  background-color: #0F9D58;
+}
+
+.small {
+  border-radius: 4px;
+  border: none;
+  padding: 6px 12px;
+}
+
+.ButtonUI.G-green:hover{
+  cursor: pointer;
+  background-color: #0d8c4f;
+}
+
+.G-blue {
+  color: white;
+  background-color: #4285F4;
+}
+
+.ButtonUI.G-blue:hover{
+  cursor: pointer;
+  background-color: #336ac4;
+}
+
+.G-red {
+  color: white;
+  background-color: #DB4437;
+}
+
+.ButtonUI.G-red:hover{
+  cursor: pointer;
+  background-color: #b0362c;
+}
+
+.G-yellow {
+  color: white;
+  background-color: #F4B400;
+}
+
+.ButtonUI.G-yellow:hover{
+  cursor: pointer;
+  background-color: #d19b02;
+}
+
+.ata-teal{
+  color: white;
+  background-color: #04837B;
+}
+
+.ButtonUI.ata-teal:hover{
+  cursor: pointer;
+  background-color: #005e58;
+}
+
+.ata-orange{
+  color: white;
+  background-color: #ffa600;
+}
+
+.ButtonUI.ata-orange:hover{
+  cursor: pointer;
+  background-color: #db8f00;
+}
+/* My Button.js file */
+/* Use ::after */
+/* <div id="button">
+<button className={"ButtonUI " + this.props.color + this.props.size} onClick={this.props.click} id={this.props.name}>{this.props.name}</button>
+</div> */
