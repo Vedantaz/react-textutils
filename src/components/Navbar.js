@@ -1,11 +1,26 @@
 // import ReactDOM from 'react-dom';
 import React from 'react'
 import About from '../About';
+// import TextForm from './components/TextForm.js';
 // import { a, a } from 'react-router-dom';
 // const React = require("react")
 // export default function Navbar({ aboutText, title }) {
 export default function Navbar(props) {
+    function isPressed() {
+        if (document.getElementById().clicked === true) {
+            alert("button is clicked");
+        }
+    }
+    if (document.getElementById(toggleMode).isPressed() === true) {
+        document.getElementById = "toggleMode"
 
+    }
+    else if (document.getElementById(GreenMode).isPressed() === true) {
+        document.getElementById = "GreenMode"
+    }
+    else {
+        document.getElementById = "RedMode";
+    }
 
     return (
 
@@ -36,19 +51,29 @@ export default function Navbar(props) {
                                 </ul>
                             </li> */}
                         </ul>
-                        <div style={{ marginRight: '41px' }} className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-                            <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
-                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault"> DarkMode </label>
-                        </div>
-                        <div style={{ marginRight: '41px' }} className={`form-check form-switch text-${props.mode === 'light' ? 'Green' : 'light'}`}>
-                            <input className="form-check-input" onClick={props.GreenMode} type="checkbox" id="green" />
-                            <label className="form-check-label" htmlFor="green"> GreenMode </label>
-                        </div>
-                        <div style={{ marginRight: '41px' }} className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-                            <input className="form-check-input" onClick={props.RedMode} type="checkbox" id="red" />
-                            <label className="form-check-label" htmlFor="red"> RedMode </label>
-                        </div>
+                        {/***************** if(button1.isPressed() && button2.isPressed() && button3.isPressed && button4.isPressed){ */}
+                        {/* // Do whathever you want */}
+                        {/* }; */}
+                        <ul>
 
+                            <div id="toggleMode" style={{ marginRight: '41px' }} className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+                                <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
+                                <label className="form-check-label" htmlFor="flexSwitchCheckDefault"> DarkMode </label>
+                            </div>
+
+
+
+                            <div id="GreenMode" style={{ marginRight: '41px' }} className={`form-check form-switch text-${props.mode === 'light' ? 'Green' : 'light'}`}>
+                                <input className="form-check-input" onClick={props.GreenMode} type="checkbox" id="green" />
+                                <label className="form-check-label" htmlFor="green"> GreenMode </label>
+                            </div>
+
+
+                            <div id="RedMode" style={{ marginRight: '41px' }} className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+                                <input className="form-check-input" onClick={props.RedMode} type="checkbox" id="red" />
+                                <label className="form-check-label" htmlFor="red"> RedMode </label>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </nav>
